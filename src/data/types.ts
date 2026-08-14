@@ -11,6 +11,7 @@ export type CategoryId =
   | "french-door"
   | "side-by-side"
   | "top-freezer"
+  | "bottom-freezer"
   | "beverage-center";
 
 export interface Category {
@@ -25,12 +26,20 @@ export type DepthClass = "standard-depth" | "counter-depth" | "built-in";
 
 export type InstallType = "freestanding" | "built-in" | "either";
 
-/** All dimensions in inches, as published by the manufacturer. */
+/**
+ * All dimensions in inches, as published by the manufacturer.
+ *
+ * Width is always published. Height and depth are optional because some
+ * manufacturers — Kenmore among them — publish only a nominal width on the
+ * product page and put the rest in the installation guide inside the carton.
+ * A missing value here renders as "—" and the product page tells the customer
+ * to call us for a measurement off the warehouse floor.
+ */
 export interface Dimensions {
   widthIn: number;
-  heightIn: number;
+  heightIn?: number;
   /** Cabinet depth, excluding handles. */
-  depthIn: number;
+  depthIn?: number;
   /** Depth including handles, when the manufacturer publishes it. */
   depthWithHandlesIn?: number;
   /** Depth including handles and an open-door swing, when published. */
@@ -131,8 +140,8 @@ export interface Product {
   waterDispenser?: string;
   warranty: Warranty;
 
-  /** ADA-compliant per the manufacturer. */
-  adaCompliant: boolean;
+  /** ADA-compliant per the manufacturer. Absent when they do not state it. */
+  adaCompliant?: boolean;
   /** Rated to run in an unconditioned garage. */
   garageReady?: boolean;
   /** Operating ambient range, when the manufacturer publishes one. */

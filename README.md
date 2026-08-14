@@ -24,7 +24,7 @@ npm run generate:images  # regenerate the product reference renders
 | `/policies/{delivery,returns,warranty}` | Customer care |
 | `/sitemap.xml`, `/robots.txt` | Generated from the catalogue |
 
-All eight product pages prerender as static HTML at build time.
+All nine product pages prerender as static HTML at build time.
 
 ## The data model
 
@@ -50,8 +50,18 @@ missing figure renders as "—" and the page says why. Bosch does not publish a
 fresh-food/freezer split for the B36CT80SNS, so that row is a dash rather than
 an invented number.
 
-Two models were dropped during research because GE has discontinued them
+Two GE models were dropped during research because GE has discontinued them
 (`GTS18GTNRWW`, `GTS18HGNRWW`) — a live store should not list them.
+
+**Kenmore 46-75635 has a real data gap.** Kenmore publishes only a nominal
+31-inch width on its product page and puts height, depth, energy draw and
+warranty terms in the installation guide inside the carton; Home Depot returns
+403 and Walmart bot-gates, so none of it could be verified. `Dimensions.heightIn`
+and `depthIn` are therefore optional in the type, the product page dashes them,
+and it shows an amber callout telling the customer to call for a measurement off
+the warehouse floor. **Fill these in from the carton before launch** — a customer
+cannot buy a refrigerator without a height. Its warranty is set to Kenmore's
+standard 1-year limited and should be confirmed against the printed document.
 
 ### What is *ours* rather than the manufacturer's
 

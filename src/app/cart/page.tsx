@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useCart } from "@/components/cart-provider";
 import { ProductImageView } from "@/components/product-image";
 import { company } from "@/data/company";
-import { formatInches, formatMoney, formatPrice } from "@/lib/format";
+import { products } from "@/data/products";
+import { capitalise, formatInches, formatMoney, formatPrice, spellNumber } from "@/lib/format";
 
 export default function CartPage() {
   const { lines, totals, hydrated, setQuantity, remove } = useCart();
@@ -22,7 +23,8 @@ export default function CartPage() {
       <div className="container-page py-20 text-center">
         <h1 className="text-2xl font-bold tracking-tight text-ink-950">Your cart is empty</h1>
         <p className="mt-3 text-ink-600">
-          Eight models in stock in South Miami, all ready to deliver this week.
+          {capitalise(spellNumber(products.length))} models in stock in South Miami, all
+          ready to deliver this week.
         </p>
         <Link
           href="/refrigerators"

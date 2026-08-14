@@ -13,9 +13,13 @@ const usdCents = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-/** Whole-dollar price, for tiles and headings. */
+/**
+ * Whole dollars when the price is a round number, cents when it is not — so
+ * $2,799 stays clean and $1,799.99 is never rounded up to $1,800, which would
+ * be both wrong and, on a price tag, arguably deceptive.
+ */
 export function formatPrice(value: number): string {
-  return usd.format(value);
+  return Number.isInteger(value) ? usd.format(value) : usdCents.format(value);
 }
 
 /** Cent-accurate, for anything that has to add up — cart, tax, totals. */
@@ -38,12 +42,38 @@ export function formatInches(value: number): string {
   return `${whole}${EIGHTHS[eighth]}"`;
 }
 
+/** Skips any dimension the manufacturer does not publish. */
 export function formatDimensions(d: Dimensions): string {
-  return `${formatInches(d.widthIn)} W × ${formatInches(d.heightIn)} H × ${formatInches(d.depthIn)} D`;
+  return [
+    `${formatInches(d.widthIn)} W`,
+    d.heightIn !== undefined ? `${formatInches(d.heightIn)} H` : null,
+    d.depthIn !== undefined ? `${formatInches(d.depthIn)} D` : null,
+  ]
+    .filter((part) => part !== null)
+    .join(" × ");
 }
 
 export function formatCuFt(value: number): string {
   return `${value} cu. ft.`;
+}
+
+const NUMBER_WORDS = [
+  "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+  "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+  "seventeen", "eighteen", "nineteen", "twenty",
+];
+
+/**
+ * Spells small numbers so prose reads naturally ("Nine models" rather than
+ * "9 models"). Used where the catalogue size appears in body copy, so it can
+ * never drift out of sync with the catalogue itself.
+ */
+export function spellNumber(value: number): string {
+  return NUMBER_WORDS[value] ?? String(value);
+}
+
+export function capitalise(value: string): string {
+  return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
 /** Percentage saved off list, rounded down so we never overstate a discount. */

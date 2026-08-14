@@ -46,6 +46,8 @@ function layout(product) {
       return { verticalSplitAt: 0.42, horizontalSplits: [] };
     case "top-freezer":
       return { verticalSplitAt: null, horizontalSplits: [0.3] };
+    case "bottom-freezer":
+      return { verticalSplitAt: null, horizontalSplits: [0.32] };
     case "beverage-center":
       return { verticalSplitAt: null, horizontalSplits: [], glassDoor: true };
     case "french-door":
@@ -56,8 +58,25 @@ function layout(product) {
   }
 }
 
+/**
+ * Nominal cabinet heights, used only to give a plausible silhouette when the
+ * manufacturer does not publish a height. The caption says so explicitly, so
+ * the render never implies a measurement we do not have.
+ */
+const NOMINAL_HEIGHT_IN = {
+  "french-door": 70,
+  "side-by-side": 70,
+  "top-freezer": 66,
+  "bottom-freezer": 67,
+  "beverage-center": 34,
+};
+
 function svg(product, variant) {
-  const { widthIn, heightIn } = product.dimensions;
+  const { widthIn } = product.dimensions;
+  const heightKnown = product.dimensions.heightIn !== undefined;
+  const heightIn = heightKnown
+    ? product.dimensions.heightIn
+    : (NOMINAL_HEIGHT_IN[product.category] ?? 68);
   const c = palette(product.finish);
   const l = layout(product);
   const lit = variant === 2;
@@ -111,6 +130,10 @@ function svg(product, variant) {
   if (product.category === "top-freezer") {
     parts.push(`<rect x="${x + W * 0.2}" y="${yAt(0.3) + 26}" width="${W * 0.6}" height="8" rx="4" fill="${c.handle}"/>`);
   }
+  if (product.category === "bottom-freezer") {
+    // Full-height fridge door handle above the freezer drawer pull.
+    parts.push(`<rect x="${x + W - 26}" y="${y + H * 0.12}" width="7" height="${H * 0.4}" rx="3.5" fill="${c.handle}"/>`);
+  }
 
   // Glass door with visible shelving, for the beverage centre.
   if (l.glassDoor) {
@@ -148,7 +171,16 @@ function svg(product, variant) {
 
   const capY = y + H + 32;
   const caption = `${product.brand} ${product.model}`;
-  const sub = `${widthIn}" W × ${heightIn}" H × ${product.dimensions.depthIn}" D · reference render, studio photo pending`;
+  const dims = [
+    `${widthIn}" W`,
+    heightKnown ? `${heightIn}" H` : null,
+    product.dimensions.depthIn !== undefined ? `${product.dimensions.depthIn}" D` : null,
+  ]
+    .filter((part) => part !== null)
+    .join(" × ");
+  const sub = heightKnown
+    ? `${dims} · reference render, studio photo pending`
+    : `${dims} · height not published by ${product.brand} · reference render, proportions nominal`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${vbW} ${vbH}" width="${vbW}" height="${vbH}" role="img" aria-label="${escapeXml(product.images[variant - 1]?.alt ?? caption)}">
   <defs>

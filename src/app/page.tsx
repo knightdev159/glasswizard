@@ -3,7 +3,7 @@ import { ProductCard } from "@/components/product-card";
 import { ProductImageView } from "@/components/product-image";
 import { categories, getProductBySlug, products } from "@/data/products";
 import { company } from "@/data/company";
-import { formatCuFt, formatInches, formatPrice } from "@/lib/format";
+import { capitalise, formatCuFt, formatInches, formatPrice, spellNumber } from "@/lib/format";
 
 const HERO_SLUG = "lg-lrfvs3006s-instaview-craft-ice";
 
@@ -26,7 +26,8 @@ export default function HomePage() {
               <span className="block text-frost-700">So we know them properly.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-600">
-              Eight models, every one of them in our warehouse on{" "}
+              {capitalise(spellNumber(products.length))} models, every one of them in our
+              warehouse on{" "}
               {company.address.street.split(" ").slice(1).join(" ")}. Our own crew
               delivers, levels the doors, connects the water line and takes the old unit
               away. No third-party freight, no drop-and-run.

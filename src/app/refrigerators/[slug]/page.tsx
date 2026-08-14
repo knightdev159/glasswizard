@@ -65,6 +65,8 @@ function productJsonLd(product: Product) {
           : "https://schema.org/OutOfStock",
       seller: { "@type": "Organization", name: company.legalName },
     },
+    // Only assert dimensions the manufacturer actually publishes — an
+    // "undefined in" string in structured data is worse than an absent property.
     additionalProperty: [
       {
         "@type": "PropertyValue",
@@ -72,8 +74,12 @@ function productJsonLd(product: Product) {
         value: `${product.capacity.totalCuFt} cu ft`,
       },
       { "@type": "PropertyValue", name: "Width", value: `${product.dimensions.widthIn} in` },
-      { "@type": "PropertyValue", name: "Height", value: `${product.dimensions.heightIn} in` },
-      { "@type": "PropertyValue", name: "Depth", value: `${product.dimensions.depthIn} in` },
+      ...(product.dimensions.heightIn !== undefined
+        ? [{ "@type": "PropertyValue", name: "Height", value: `${product.dimensions.heightIn} in` }]
+        : []),
+      ...(product.dimensions.depthIn !== undefined
+        ? [{ "@type": "PropertyValue", name: "Depth", value: `${product.dimensions.depthIn} in` }]
+        : []),
     ],
   };
 }
@@ -93,6 +99,8 @@ export default async function ProductPage({
   const related = products
     .filter((p) => p.slug !== product.slug && p.category === product.category)
     .slice(0, 3);
+  const dimensionsIncomplete =
+    product.dimensions.heightIn === undefined || product.dimensions.depthIn === undefined;
 
   return (
     <div className="container-page py-8">
@@ -196,14 +204,43 @@ export default async function ProductPage({
           <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
             <QuickSpec label="Capacity" value={formatCuFt(product.capacity.totalCuFt)} />
             <QuickSpec label="Width" value={formatInches(product.dimensions.widthIn)} />
-            <QuickSpec label="Height" value={formatInches(product.dimensions.heightIn)} />
-            <QuickSpec label="Depth" value={formatInches(product.dimensions.depthIn)} />
+            <QuickSpec
+              label="Height"
+              value={
+                product.dimensions.heightIn !== undefined
+                  ? formatInches(product.dimensions.heightIn)
+                  : null
+              }
+            />
+            <QuickSpec
+              label="Depth"
+              value={
+                product.dimensions.depthIn !== undefined
+                  ? formatInches(product.dimensions.depthIn)
+                  : null
+              }
+            />
             <QuickSpec
               label="Depth class"
               value={product.depthClass === "counter-depth" ? "Counter-depth" : product.depthClass === "built-in" ? "Built-in" : "Standard"}
             />
             <QuickSpec label="Doors" value={String(product.doorCount)} />
           </div>
+
+          {dimensionsIncomplete && (
+            <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-900">
+              <strong className="font-semibold">{product.brand}</strong> publishes only the
+              nominal width for this model — the remaining dimensions are in the
+              installation guide inside the carton. Before you order, call{" "}
+              <a
+                href={`tel:${company.contact.phone}`}
+                className="numeric font-semibold underline"
+              >
+                {company.contact.phoneDisplay}
+              </a>{" "}
+              and we will measure the unit on our floor for you.
+            </p>
+          )}
         </div>
       </div>
 
@@ -270,8 +307,22 @@ export default async function ProductPage({
 
           <SpecGroup title="Dimensions & fit">
             <Spec label="Width" value={formatInches(product.dimensions.widthIn)} />
-            <Spec label="Height" value={formatInches(product.dimensions.heightIn)} />
-            <Spec label="Depth (excl. handles)" value={formatInches(product.dimensions.depthIn)} />
+            <Spec
+              label="Height"
+              value={
+                product.dimensions.heightIn !== undefined
+                  ? formatInches(product.dimensions.heightIn)
+                  : null
+              }
+            />
+            <Spec
+              label="Depth (excl. handles)"
+              value={
+                product.dimensions.depthIn !== undefined
+                  ? formatInches(product.dimensions.depthIn)
+                  : null
+              }
+            />
             <Spec
               label="Depth incl. handles"
               value={
@@ -334,7 +385,12 @@ export default async function ProductPage({
               value={product.energy.kwhPerYear ? `${product.energy.kwhPerYear} kWh / year` : null}
             />
             <Spec label="ENERGY STAR" value={product.energy.energyStar ? "Certified" : "Not certified"} />
-            <Spec label="ADA compliant" value={product.adaCompliant ? "Yes" : "No"} />
+            <Spec
+              label="ADA compliant"
+              value={
+                product.adaCompliant === undefined ? null : product.adaCompliant ? "Yes" : "No"
+              }
+            />
             <Spec
               label="Garage ready"
               value={product.garageReady === undefined ? null : product.garageReady ? "Yes" : "No"}
@@ -362,11 +418,15 @@ export default async function ProductPage({
   );
 }
 
-function QuickSpec({ label, value }: { label: string; value: string }) {
+function QuickSpec({ label, value }: { label: string; value: string | null }) {
   return (
     <div className="rounded-lg border border-ink-200 px-3 py-2.5">
       <dt className="text-[11px] font-medium uppercase tracking-wide text-ink-400">{label}</dt>
-      <dd className="numeric mt-0.5 text-sm font-semibold text-ink-900">{value}</dd>
+      <dd
+        className={`numeric mt-0.5 text-sm font-semibold ${value ? "text-ink-900" : "text-ink-300"}`}
+      >
+        {value ?? "—"}
+      </dd>
     </div>
   );
 }

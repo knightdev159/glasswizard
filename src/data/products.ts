@@ -37,6 +37,15 @@ export const categories: Category[] = [
       "standard recommendation for rentals, garages and second kitchens.",
   },
   {
+    id: "bottom-freezer",
+    name: "Bottom freezer",
+    plural: "Bottom freezer refrigerators",
+    blurb:
+      "A single full-width fridge door over a freezer drawer. Everything you reach " +
+      "for daily sits at eye level, and the freezer — which you open far less — goes " +
+      "underneath. The sensible compromise between a top freezer and a French door.",
+  },
+  {
     id: "beverage-center",
     name: "Beverage centre",
     plural: "Beverage centres",
@@ -522,6 +531,72 @@ export const products: Product[] = [
     ],
 
     inventory: { onHand: 14, localLeadTimeDays: 1 },
+  },
+
+  {
+    slug: "kenmore-4675635-counter-depth-bottom-freezer",
+    model: "46-75635",
+    brand: "Kenmore",
+    name: "31-inch 17.8 cu. ft. Counter-Depth Bottom Freezer Refrigerator",
+    category: "bottom-freezer",
+    sku: "GW-KEN-4675635",
+
+    price: 1799.99,
+
+    finish: "Fingerprint-resistant stainless steel",
+    depthClass: "counter-depth",
+    installType: "freestanding",
+    doorCount: 2,
+
+    // Kenmore publishes the total only — no fresh-food/freezer split.
+    capacity: { totalCuFt: 17.8 },
+    // Kenmore publishes the 31-inch nominal width on the product page and puts
+    // height and depth in the installation guide inside the carton.
+    dimensions: { widthIn: 31 },
+
+    energy: { energyStar: true },
+    electrical: { volts: 115, hertz: 60, amps: 15 },
+    iceMaker: {
+      type: "Automatic cubed ice maker",
+      dailyProductionLbs: 3.5,
+    },
+    warranty: { overall: "1 year limited parts and labour" },
+
+    shortDescription:
+      "Counter-depth in a 31-inch opening, with an inverter compressor and the freezer where it belongs.",
+    description:
+      "The narrowest counter-depth unit we stock, and the one we reach for when a " +
+      "kitchen has a 31-inch opening and no appetite for rebuilding cabinetry. A bottom " +
+      "freezer is the quietly sensible layout: the fresh food you open twenty times a " +
+      "day sits at eye level, and the freezer you open twice a week goes underneath in a " +
+      "three-tier drawer system. The inverter compressor is the part worth paying for — " +
+      "rather than cycling hard on and off, it modulates to hold a steady temperature, " +
+      "which means less drift, less noise and less wear than a conventional compressor at " +
+      "this price. Doors are reversible, so a left-hand hinge in a tight galley is a " +
+      "field change rather than a different SKU.",
+    highlights: [
+      "17.8 cu. ft. in a 31-inch width",
+      "Counter-depth — sits close to flush with a standard cabinet run",
+      "Inverter compressor holds a steadier temperature and runs quieter",
+      "Three-tier freezer: two drawers and a tray",
+      "Automatic ice maker — up to 3.5 lb per day",
+      "Full-width tempered glass shelves and two crisper drawers",
+      "Five clear door bins including a gallon bin",
+      "Reversible doors",
+      "ENERGY STAR certified · Eco Mode",
+    ],
+    specSheetUrl:
+      "https://www.kenmore.com/products/refrigeration/refrigerators/bottom-freezer-refrigerators/178-cu-ft-counter-depth-bottom-freezer-refrigerator-fingerprint-resistant-stainless-steel-energy-star174",
+
+    images: [
+      {
+        src: "/products/GW-KEN-4675635/01.svg",
+        alt: "Kenmore 46-75635 counter-depth bottom freezer refrigerator, front view",
+        source: "pending",
+      },
+    ],
+
+    inventory: { onHand: 6, localLeadTimeDays: 2 },
   },
 
   {
