@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ink — text and dark surfaces. */
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d5d9e2;
+  --color-ink-300: #b0b8c8;
+  --color-ink-400: #8491a7;
+  --color-ink-500: #64728b;
+  --color-ink-600: #4e5a71;
+  --color-ink-700: #40495c;
+  --color-ink-800: #373e4e;
+  --color-ink-900: #1d2432;
+  --color-ink-950: #0b1018;
+
+  /* Frost — the accent. Cold, which is the whole product category. */
+  --color-frost-50: #ecfdff;
+  --color-frost-100: #cff8fe;
+  --color-frost-200: #a5f0fc;
+  --color-frost-300: #67e3f9;
+  --color-frost-400: #22ccee;
+  --color-frost-500: #06aad4;
+  --color-frost-600: #0888b2;
+  --color-frost-700: #0e6d90;
+  --color-frost-800: #155b75;
+  --color-frost-900: #164c63;
+  --color-frost-950: #083344;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink-900);
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: normal;
+  }
+
+  /* Tabular figures everywhere a price, dimension or capacity appears —
+     spec tables misalign badly without this. */
+  .numeric {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-frost-600);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+}

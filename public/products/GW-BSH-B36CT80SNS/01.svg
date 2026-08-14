@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 399 712" width="399" height="712" role="img" aria-label="Bosch B36CT80SNS 800 Series counter-depth refrigerator, front view">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a2aab6"/>
+      <stop offset="14%" stop-color="#e8ebef"/>
+      <stop offset="38%" stop-color="#c8ced7"/>
+      <stop offset="62%" stop-color="#e8ebef"/>
+      <stop offset="86%" stop-color="#c8ced7"/>
+      <stop offset="100%" stop-color="#a2aab6"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#20323d" stop-opacity="0.92"/>
+      <stop offset="45%" stop-color="#33505f" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#1a262e" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+  <rect width="399" height="712" fill="transparent"/>
+  <rect x="52" y="40" width="307" height="620" rx="10" fill="#0b0f14" opacity="0.10"/>
+  <rect x="46" y="30" width="307" height="620" rx="10" fill="url(#body)" stroke="#7c8592" stroke-width="1.5"/>
+  <line x1="49" y1="265.6" x2="350" y2="265.6" stroke="#7c8592" stroke-width="2.5" opacity="0.85"/>
+  <line x1="199.5" y1="33" x2="199.5" y2="265.6" stroke="#7c8592" stroke-width="2.5" opacity="0.85"/>
+  <rect x="183.5" y="76" width="7" height="186" rx="3.5" fill="#8b939f"/>
+  <rect x="208.5" y="76" width="7" height="186" rx="3.5" fill="#8b939f"/>
+  <rect x="107.4" y="453.79999999999995" width="184.2" height="8" rx="4" fill="#8b939f"/>
+  <rect x="60" y="650" width="18" height="7" rx="2" fill="#7c8592"/>
+  <rect x="321" y="650" width="18" height="7" rx="2" fill="#7c8592"/>
+  <text x="199.5" y="682" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" font-weight="600" fill="#475569">Bosch B36CT80SNS</text>
+  <text x="199.5" y="703" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="12.5" fill="#94a3b8">35.625&quot; W × 72&quot; H × 27.813&quot; D · reference render, studio photo pending</text>
+</svg>

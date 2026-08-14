@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397 712" width="397" height="712" role="img" aria-label="Samsung RF23DB9900QD with the Family Hub+ panel lit">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a2aab6"/>
+      <stop offset="14%" stop-color="#e8ebef"/>
+      <stop offset="38%" stop-color="#c8ced7"/>
+      <stop offset="62%" stop-color="#e8ebef"/>
+      <stop offset="86%" stop-color="#c8ced7"/>
+      <stop offset="100%" stop-color="#a2aab6"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#20323d" stop-opacity="0.92"/>
+      <stop offset="45%" stop-color="#33505f" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#1a262e" stop-opacity="0.94"/>
+    </linearGradient>
+  </defs>
+  <rect width="397" height="712" fill="transparent"/>
+  <rect x="52" y="40" width="305" height="620" rx="10" fill="#0b0f14" opacity="0.10"/>
+  <rect x="46" y="30" width="305" height="620" rx="10" fill="url(#body)" stroke="#7c8592" stroke-width="1.5"/>
+  <line x1="49" y1="290.40000000000003" x2="348" y2="290.40000000000003" stroke="#7c8592" stroke-width="2.5" opacity="0.85"/>
+  <line x1="49" y1="160.2" x2="348" y2="160.2" stroke="#7c8592" stroke-width="2.5" opacity="0.85"/>
+  <line x1="198.5" y1="33" x2="198.5" y2="290.40000000000003" stroke="#7c8592" stroke-width="2.5" opacity="0.85"/>
+  <rect x="182.5" y="76" width="7" height="186" rx="3.5" fill="#8b939f"/>
+  <rect x="207.5" y="76" width="7" height="186" rx="3.5" fill="#8b939f"/>
+  <rect x="107" y="221.29999999999995" width="183" height="8" rx="4" fill="#8b939f"/>
+  <rect x="107" y="466.2" width="183" height="8" rx="4" fill="#8b939f"/>
+  <rect x="73.45" y="67.19999999999999" width="103.7" height="186" rx="5" fill="#1b3a5c" stroke="#0d1013"/>
+  <rect x="82.6" y="92" width="85.4" height="5" rx="2.5" fill="#7fb8e8" opacity="0.8"/>
+  <rect x="82.6" y="116.80000000000001" width="54.9" height="5" rx="2.5" fill="#7fb8e8" opacity="0.55"/>
+  <rect x="60" y="650" width="18" height="7" rx="2" fill="#7c8592"/>
+  <rect x="319" y="650" width="18" height="7" rx="2" fill="#7c8592"/>
+  <text x="198.5" y="682" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" font-weight="600" fill="#475569">Samsung RF23DB9900QD</text>
+  <text x="198.5" y="703" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="12.5" fill="#94a3b8">35.875&quot; W × 73&quot; H × 28.75&quot; D · reference render, studio photo pending</text>
+</svg>
