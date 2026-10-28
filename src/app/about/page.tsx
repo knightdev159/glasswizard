@@ -9,8 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const totalUnits = products.reduce((n, p) => n + p.inventory.onHand, 0);
-
   return (
     <div className="container-page max-w-3xl py-14">
       <h1 className="text-3xl font-bold tracking-tight text-ink-950">
@@ -31,21 +29,19 @@ export default function AboutPage() {
           That focus is a deliberate trade. A general appliance dealer carries perhaps two
           hundred SKUs across eight categories and cannot know any of them in depth. Our
           catalogue currently carries {products.length} refrigerator models from{" "}
-          {brands.length} manufacturers, with {totalUnits} units in stock. We have opened every one
-          of them, measured them, and installed them in enough South Florida kitchens to
-          know which ones cause trouble in a 1960s condo and which ones do not.
+          {brands.length} manufacturers, each chosen for how it fits the openings found in
+          South Florida kitchens, from 1960s condos to new builds.
         </p>
 
         <h2 className="pt-4 text-xl font-bold tracking-tight text-ink-950">
-          We do our own deliveries
+          How we fulfil orders
         </h2>
         <p>
-          The single biggest source of appliance complaints is third-party freight: a
-          contract truck arrives, leaves a box in the garage, and the customer is left to
-          find an installer. We do not work that way. Our crew brings the unit in, levels
-          the cabinet, aligns the doors, connects the water line, starts the ice maker and
-          confirms it is making ice before leaving. The old refrigerator goes back on the
-          truck and its refrigerant is recovered under EPA Section 608.
+          We keep a limited stock of our best-selling models for faster local delivery.
+          Everything else ships new from the distributor or manufacturer straight to your
+          address. Delivery is made by the carriers we book for you. Installation and
+          removal of your old appliance are not included, so plan for a licensed installer
+          if you need one.
         </p>
 
         <h2 className="pt-4 text-xl font-bold tracking-tight text-ink-950">
@@ -56,14 +52,14 @@ export default function AboutPage() {
           manufacturer’s own published spec sheet, and each product page links to that
           sheet so you can check us. Where a manufacturer does not publish a figure, we
           show a dash rather than an estimate. If you need a number that is not printed
-          anywhere, call us and we will go measure the unit standing in the warehouse.
+          anywhere, call us and we will get it from the manufacturer or distributor.
         </p>
 
         <h2 className="pt-4 text-xl font-bold tracking-tight text-ink-950">
           Where we deliver
         </h2>
         <p>
-          {company.localDeliveryArea} on our own trucks — every ZIP beginning{" "}
+          Local delivery across {company.localDeliveryArea} — every ZIP beginning{" "}
           <span className="numeric font-medium text-ink-900">
             {company.localDeliveryZipPrefixes.join(", ")}
           </span>

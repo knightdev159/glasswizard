@@ -171,7 +171,7 @@ export const products: Product[] = [
     shortDescription:
       "Thirty cubic feet, a knock-to-see glass panel, and the round slow-melt ice everyone actually wants.",
     description:
-      "The biggest fresh-food capacity we stock in a standard 36-inch opening. The " +
+      "The biggest fresh-food capacity we carry in a standard 36-inch opening. The " +
       "InstaView panel lights from inside on two knocks, so the most-opened part of the " +
       "door gets opened far less — which is the point, since the Door-in-Door " +
       "compartment holds the drinks and condiments that account for most door swings. " +
@@ -180,7 +180,7 @@ export const products: Product[] = [
       "a ten-year warranty, which is the longest sealed-system coverage on anything in " +
       "this catalogue.",
     highlights: [
-      "30 cu. ft. — the largest capacity we stock at 36 inches wide",
+      "30 cu. ft. — the largest capacity we carry at 36 inches wide",
       "InstaView glass panel lights on two knocks",
       "Craft Ice slow-melting 2-inch spheres",
       "Door-in-Door easy-access compartment",
@@ -315,7 +315,7 @@ export const products: Product[] = [
       "compressors with two evaporators, which lets each side hold its set point without " +
       "borrowing cooling from the other. Paired with the FarmFresh system — VitaFreshPro " +
       "humidity control, a FreshProtect ethylene absorber, an AirFresh carbon filter and " +
-      "MultiAirFlow distribution — it is the best produce-keeper we stock, by a wide " +
+      "MultiAirFlow distribution — it is the best produce-keeper we carry, by a wide " +
       "margin. Interior is glass and stainless rather than moulded plastic. Fits a " +
       "36 × 72 × 25-inch cutout for a flush cabinetry run.",
     highlights: [
@@ -565,7 +565,7 @@ export const products: Product[] = [
     shortDescription:
       "Counter-depth in a 31-inch opening, with an inverter compressor and the freezer where it belongs.",
     description:
-      "The narrowest counter-depth unit we stock, and the one we reach for when a " +
+      "The narrowest counter-depth unit we carry, and the one we reach for when a " +
       "kitchen has a 31-inch opening and no appetite for rebuilding cabinetry. A bottom " +
       "freezer is the quietly sensible layout: the fresh food you open twenty times a " +
       "day sits at eye level, and the freezer you open twice a week goes underneath in a " +

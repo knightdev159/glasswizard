@@ -61,7 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     return stored.flatMap((line) => {
       const product = products.find((p) => p.sku === line.sku);
       if (!product) return [];
-      // Never let the cart exceed what is actually on the warehouse floor.
+      // Never let the cart exceed the per-model order limit.
       const quantity = Math.min(line.quantity, Math.max(product.inventory.onHand, 0));
       if (quantity <= 0) return [];
       return [{ product, quantity, lineTotal: product.price * quantity }];

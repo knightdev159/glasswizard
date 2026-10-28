@@ -91,8 +91,7 @@ export function stockLabel(product: Product): {
   tone: "in" | "low" | "out";
 } {
   const { onHand, localLeadTimeDays } = product.inventory;
-  if (onHand === 0) return { text: "Out of stock", tone: "out" };
-  const days = localLeadTimeDays === 1 ? "next business day" : `${localLeadTimeDays} business days`;
-  if (onHand <= 3) return { text: `Only ${onHand} left — delivers in ${days}`, tone: "low" };
-  return { text: `In stock — delivers in ${days}`, tone: "in" };
+  if (onHand === 0) return { text: "Currently unavailable", tone: "out" };
+  const days = localLeadTimeDays === 1 ? "1 business day" : `${localLeadTimeDays} business days`;
+  return { text: `Available — delivers in about ${days}`, tone: "in" };
 }

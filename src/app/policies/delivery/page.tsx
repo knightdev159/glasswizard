@@ -3,77 +3,73 @@ import { company } from "@/data/company";
 import { PolicyBody, PolicyHeading, PolicyPara, PolicyList } from "@/components/policy";
 
 export const metadata: Metadata = {
-  title: "Delivery & installation",
-  description: `How ${company.legalName} delivers, installs and hauls away refrigerators across ${company.localDeliveryArea}.`,
+  title: "Delivery",
+  description: `How ${company.legalName} ships and delivers orders across ${company.localDeliveryArea} and the rest of the United States.`,
 };
 
 export default function DeliveryPolicyPage() {
   return (
-    <PolicyBody title="Delivery & installation">
+    <PolicyBody title="Delivery">
       <PolicyPara>
-        Every delivery in our local service area is made by our own crew on our own truck.
-        We do not use contract freight, and we do not leave a refrigerator in a garage.
+        We sell online only. Your order is delivered to your address by a delivery or
+        freight carrier we book for you — there is no showroom pickup.
+      </PolicyPara>
+
+      <PolicyHeading>Where your order ships from</PolicyHeading>
+      <PolicyPara>
+        We keep a limited stock of our best-selling models for faster local delivery. Every
+        other model is shipped new by the distributor or manufacturer straight to you. The
+        lead time on each product page is our estimate in business days from order
+        confirmation, and we confirm it when you order.
       </PolicyPara>
 
       <PolicyHeading>Where we deliver</PolicyHeading>
       <PolicyPara>
-        {company.localDeliveryArea} counties — all ZIP codes beginning{" "}
+        Local delivery covers {company.localDeliveryArea} counties — all ZIP codes beginning{" "}
         <span className="numeric font-medium text-ink-900">
           {company.localDeliveryZipPrefixes.join(", ")}
         </span>
-        . Delivery is free on orders of{" "}
+        . It is free on orders of{" "}
         <span className="numeric font-medium text-ink-900">
           ${company.freeDeliveryThreshold}
         </span>{" "}
         or more, and a flat{" "}
         <span className="numeric font-medium text-ink-900">${company.localDeliveryFee}</span>{" "}
-        below that. Outside this area we will quote common-carrier freight on request.
+        below that. Anywhere else in the United States, we quote freight at cost before you
+        pay.
       </PolicyPara>
-
-      <PolicyHeading>What is included</PolicyHeading>
-      <PolicyList
-        items={[
-          "Bringing the unit into the kitchen and unpacking it",
-          "Levelling the cabinet and aligning the doors",
-          "Connecting the water line to an existing ¼-inch shut-off valve",
-          "Starting the ice maker and confirming production before we leave",
-          "Removing all packaging from the property",
-          "Hauling away your old refrigerator, with refrigerant recovered under EPA Section 608",
-        ]}
-      />
 
       <PolicyHeading>What is not included</PolicyHeading>
       <PolicyList
         items={[
-          "New plumbing. If there is no water shut-off valve within six feet, a licensed plumber must add one before we can connect a dispenser or ice maker.",
+          "Installation. We do not install, level or connect appliances; a licensed installer or plumber should connect any water line.",
+          "Removal of your old appliance.",
           "Electrical work. Refrigerators require a dedicated grounded 115–120 V, 15 A circuit.",
-          "Carpentry. We will not cut, plane or remove cabinetry, trim or doors to make a unit fit.",
-          "Hoisting or crane work above the second floor without stair access.",
+          "Carpentry. Cabinetry, trim or doors that need altering for a unit to fit.",
         ]}
       />
 
-      <PolicyHeading>Before the truck arrives</PolicyHeading>
+      <PolicyHeading>Before you order</PolicyHeading>
       <PolicyPara>
         Measure the opening, the narrowest point on the path in, and the door swing. This
-        is the single most common cause of a failed delivery, and it is entirely avoidable.
-        If any measurement is within an inch of the published dimensions on the product
-        page, call us at{" "}
+        is the most common cause of a failed delivery, and it is entirely avoidable. If any
+        measurement is within an inch of the published dimensions on the product page, call
+        us at{" "}
         <a href={`tel:${company.contact.phone}`} className="numeric font-semibold text-frost-700 hover:underline">
           {company.contact.phoneDisplay}
         </a>{" "}
-        and we will work it out before loading.
+        and we will check the fit with you before the order ships.
       </PolicyPara>
       <PolicyPara>
-        If the unit cannot be installed because the opening or access path will not take
-        it, we will return it and refund the purchase price in full. The delivery fee is
-        not refunded in that case.
+        If the unit will not fit the opening or the access path, we will arrange its return
+        and refund the purchase price in full. The delivery fee is not refunded in that
+        case.
       </PolicyPara>
 
       <PolicyHeading>Scheduling</PolicyHeading>
       <PolicyPara>
-        We deliver Monday to Saturday in four-hour windows, confirmed by phone the day
-        before. Someone over 18 must be present to accept the delivery and sign for it.
-        Lead times shown on each product page are business days from order confirmation.
+        We or the carrier will contact you to arrange a delivery window. Someone over 18
+        must be present to accept the delivery, inspect it and sign for it.
       </PolicyPara>
     </PolicyBody>
   );

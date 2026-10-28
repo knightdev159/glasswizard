@@ -5,7 +5,7 @@ import type { ProductImage as ProductImageData } from "@/data/types";
  * Renders a catalogue image and, critically, tells the truth about what it is.
  *
  * Images marked `pending` carry a visible badge so a dimensional reference
- * render is never mistaken for a photograph of the unit in our warehouse.
+ * render is never mistaken for a photograph of the actual unit.
  * Once real dealer photography replaces the file and `source` flips to
  * "own-photo", the badge disappears with no other change.
  */

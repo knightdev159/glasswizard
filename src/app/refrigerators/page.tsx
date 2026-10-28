@@ -99,7 +99,7 @@ export default async function RefrigeratorsPage({
         <p className="mt-3 leading-relaxed text-ink-600">
           {category
             ? category.blurb
-            : "Every model we stock, with the manufacturer's published specifications. " +
+            : "Every model we sell, with the manufacturer's published specifications. " +
               "If a figure is not printed on the spec sheet, we leave it blank rather than guess."}
         </p>
       </header>
@@ -167,7 +167,7 @@ export default async function RefrigeratorsPage({
           {list.length === 0 ? (
             <div className="mt-12 rounded-card border border-dashed border-ink-300 p-12 text-center">
               <p className="font-semibold text-ink-800">
-                Nothing in stock matches that combination.
+                Nothing in the catalogue matches that combination.
               </p>
               <p className="mt-2 text-sm text-ink-600">
                 We can usually order it in within a week — give us a call.

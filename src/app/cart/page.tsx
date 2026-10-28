@@ -23,8 +23,8 @@ export default function CartPage() {
       <div className="container-page py-20 text-center">
         <h1 className="text-2xl font-bold tracking-tight text-ink-950">Your cart is empty</h1>
         <p className="mt-3 text-ink-600">
-          {capitalise(spellNumber(products.length))} models in stock, all ready to
-          deliver across South Florida this week.
+          {capitalise(spellNumber(products.length))} models available to order,
+          delivered across South Florida.
         </p>
         <Link
           href="/refrigerators"
@@ -102,7 +102,7 @@ export default function CartPage() {
                   </div>
                   {quantity >= product.inventory.onHand && (
                     <span className="numeric text-xs text-amber-700">
-                      All {product.inventory.onHand} in stock
+                      Order limit {product.inventory.onHand} — call us for more
                     </span>
                   )}
                   <button
@@ -124,7 +124,7 @@ export default function CartPage() {
           <dl className="numeric mt-5 space-y-3 text-sm">
             <Row label="Subtotal" value={formatMoney(totals.subtotal)} />
             <Row
-              label="Delivery & installation"
+              label="Delivery"
               value={totals.delivery === 0 ? "Free" : formatMoney(totals.delivery)}
             />
             <Row

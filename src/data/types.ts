@@ -33,7 +33,7 @@ export type InstallType = "freestanding" | "built-in" | "either";
  * manufacturers — Kenmore among them — publish only a nominal width on the
  * product page and put the rest in the installation guide inside the carton.
  * A missing value here renders as "—" and the product page tells the customer
- * to call us for a measurement off the warehouse floor.
+ * to call us for the measurement.
  */
 export interface Dimensions {
   widthIn: number;
@@ -160,7 +160,7 @@ export interface Product {
   images: ProductImage[];
 
   inventory: {
-    /** Units physically in stock. */
+    /** Per-model order limit; 0 marks the model unavailable. */
     onHand: number;
     /** Business days to deliver in our local service area. */
     localLeadTimeDays: number;

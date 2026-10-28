@@ -49,7 +49,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
               <Link href="/policies/delivery" className="hover:text-frost-300">
-                Delivery &amp; installation
+                Delivery
               </Link>
             </li>
             <li>

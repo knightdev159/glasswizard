@@ -13,8 +13,8 @@ export default function ReturnsPolicyPage() {
       <PolicyPara>
         You have{" "}
         <span className="numeric font-medium text-ink-900">{company.returnWindowDays} days</span>{" "}
-        from the delivery date to return a refrigerator. We collect it ourselves — you do
-        not need to arrange freight or find the original box a carrier will accept.
+        from the delivery date to return a refrigerator. We arrange the pickup — you do
+        not need to book freight yourself.
       </PolicyPara>
 
       <PolicyHeading>What we accept</PolicyHeading>
@@ -47,10 +47,10 @@ export default function ReturnsPolicyPage() {
 
       <PolicyHeading>Damage on arrival</PolicyHeading>
       <PolicyPara>
-        Inspect the unit before our crew leaves. Because we deliver on our own trucks,
-        transit damage is our problem rather than a freight claim you have to pursue. Point
-        it out at the door and we will take the unit back and replace it, at no cost and
-        with no paperwork.
+        Inspect the unit before you sign for the delivery. Note any damage on the delivery
+        receipt, take photos, and contact us. Transit damage is our problem rather than a
+        claim you have to pursue: we deal with the carrier and replace the unit at no cost
+        to you.
       </PolicyPara>
 
       <PolicyHeading>How to start a return</PolicyHeading>
@@ -65,7 +65,7 @@ export default function ReturnsPolicyPage() {
         </a>{" "}
         with your order number. We will schedule collection within three business days and
         issue the refund to the original payment method within five business days of the
-        unit reaching our warehouse.
+        returned unit being received.
       </PolicyPara>
     </PolicyBody>
   );

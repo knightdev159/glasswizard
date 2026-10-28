@@ -26,10 +26,10 @@ export default function HomePage() {
               <span className="block text-frost-700">So we know it properly.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-600">
-              {capitalise(spellNumber(products.length))} refrigerator models in stock,
-              ordered online and delivered across South Florida. Our own crew delivers,
-              levels the doors, connects the water line and takes the old unit away. No
-              third-party freight, no drop-and-run.
+              {capitalise(spellNumber(products.length))} refrigerator models, ordered
+              online and delivered across South Florida. Every listing carries the
+              manufacturer’s full specifications, and we will check the fit with you before
+              your order ships.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -83,20 +83,20 @@ export default function HomePage() {
         <div className="container-page grid gap-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
-              title: "Delivered by our crew",
+              title: "Delivered to your door",
               body: `Free on orders over $${company.freeDeliveryThreshold} across ${company.localDeliveryArea}. $${company.localDeliveryFee} flat below that.`,
             },
             {
-              title: "Installed and levelled",
-              body: "Doors aligned, water line connected, ice maker started and tested before we leave.",
+              title: "Fit checked before you buy",
+              body: "Send us your measurements and we confirm the unit fits the opening and the path in.",
             },
             {
-              title: "Old unit hauled away",
-              body: "We take the outgoing refrigerator and recycle its refrigerant to EPA Section 608.",
+              title: "Full manufacturer warranty",
+              body: "Every unit is sold new and covered by its manufacturer’s warranty.",
             },
             {
               title: `${company.returnWindowDays}-day returns`,
-              body: "Uninstalled and in original packaging. Full refund, and we collect it ourselves.",
+              body: "Uninstalled and in original packaging. Full refund, and we arrange the pickup.",
             },
           ].map((item) => (
             <div key={item.title}>
@@ -141,10 +141,10 @@ export default function HomePage() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-ink-950">
-              In the warehouse now
+              Popular models
             </h2>
             <p className="mt-2 text-ink-600">
-              Everything below is physically on our floor — not a drop-ship listing.
+              Shipped new, from our stock or straight from the distributor.
             </p>
           </div>
           <Link
@@ -171,7 +171,7 @@ export default function HomePage() {
             <p className="mt-3 max-w-xl leading-relaxed text-ink-400">
               Nearly every failed refrigerator delivery comes down to one of these, and
               all three take about four minutes with a tape measure. If anything is
-              tight, call us and we will work it out with you before the truck is loaded.
+              tight, call us and we will work it out with you before your order ships.
             </p>
             <a
               href={`tel:${company.contact.phone}`}

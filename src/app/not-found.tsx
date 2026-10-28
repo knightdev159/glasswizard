@@ -9,7 +9,7 @@ export default function NotFound() {
       </h1>
       <p className="mx-auto mt-3 max-w-md text-ink-600">
         The model may have been discontinued, or the link may be out of date. Everything we
-        currently stock is on one page.
+        currently sell is on one page.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link

@@ -58,7 +58,7 @@ export const company = {
 
   /** Counties covered by local delivery, matching the ZIP prefixes below. */
   localDeliveryArea: "Miami-Dade, Broward and Palm Beach",
-  /** ZIP prefixes we deliver to on our own trucks. */
+  /** ZIP prefixes covered by local delivery. */
   localDeliveryZipPrefixes: ["330", "331", "332", "333", "334"],
 
   freeDeliveryThreshold: 999,

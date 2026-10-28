@@ -70,10 +70,10 @@ export default function WarrantyPolicyPage() {
         <a href={`tel:${company.contact.phone}`} className="numeric font-semibold text-frost-700 hover:underline">
           {company.contact.phoneDisplay}
         </a>
-        . In the first year we will usually diagnose it ourselves and, where the fault is
-        straightforward, handle the manufacturer paperwork on your behalf. Beyond the first
-        year, claims go directly to the manufacturer’s service network; we will give you
-        the model number, serial number and date of sale you need to open the case.
+        . In the first year we will help you open the claim with the manufacturer and
+        handle the paperwork on your behalf where we can. Repairs are carried out by the
+        manufacturer’s service network; we will give you the model number, serial number
+        and date of sale you need to open the case.
       </PolicyPara>
 
       <PolicyHeading>What voids coverage</PolicyHeading>

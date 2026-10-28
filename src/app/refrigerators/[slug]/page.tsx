@@ -31,7 +31,7 @@ export async function generateMetadata({
 
   return {
     title: `${product.brand} ${product.model} — ${product.name}`,
-    description: `${product.shortDescription} ${formatCuFt(product.capacity.totalCuFt)}, ${formatDimensions(product.dimensions)}. In stock at ${formatPrice(product.price)}, delivered across South Florida.`,
+    description: `${product.shortDescription} ${formatCuFt(product.capacity.totalCuFt)}, ${formatDimensions(product.dimensions)}. ${formatPrice(product.price)}, delivered across South Florida.`,
     alternates: { canonical: `/refrigerators/${product.slug}` },
     openGraph: {
       title: `${product.brand} ${product.model}`,
@@ -189,11 +189,7 @@ export default async function ProductPage({
             </li>
             <li className="flex gap-2.5">
               <Tick />
-              Installed, levelled and tested by our own crew
-            </li>
-            <li className="flex gap-2.5">
-              <Tick />
-              Old refrigerator hauled away and recycled
+              Fit checked with you by phone before it ships
             </li>
             <li className="flex gap-2.5">
               <Tick />
@@ -238,7 +234,7 @@ export default async function ProductPage({
               >
                 {company.contact.phoneDisplay}
               </a>{" "}
-              and we will measure the unit on our floor for you.
+              and we will get the measurements from the manufacturer for you.
             </p>
           )}
         </div>
@@ -248,7 +244,7 @@ export default async function ProductPage({
       <section className="mt-16 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
         <div>
           <h2 className="text-xl font-bold tracking-tight text-ink-950">
-            Why we stock this one
+            Why we carry this one
           </h2>
           <p className="mt-4 leading-relaxed text-ink-700">{product.description}</p>
         </div>
@@ -285,7 +281,7 @@ export default async function ProductPage({
         <p className="mt-2 max-w-3xl text-sm text-ink-500">
           Every figure below is as published by {product.brand}. Where a value is shown as
           “—”, the manufacturer does not publish it and we will not invent one — ask us and
-          we will measure the unit on our floor.
+          we will get it from the manufacturer.
         </p>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2">

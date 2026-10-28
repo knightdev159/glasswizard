@@ -14,7 +14,7 @@ export function AddToCart({ sku, onHand }: { sku: string; onHand: number }) {
   const soldOut = onHand === 0;
 
   // Clamped during render rather than corrected in an effect, so the displayed
-  // quantity can never briefly exceed what is left on the floor — which matters
+  // quantity can never briefly exceed the order limit — which matters
   // when another tab adds the same SKU.
   const selected = Math.min(quantity, Math.max(remaining, 1));
 
@@ -27,7 +27,7 @@ export function AddToCart({ sku, onHand }: { sku: string; onHand: number }) {
   if (soldOut) {
     return (
       <div className="rounded-lg border border-ink-200 bg-ink-50 p-4 text-sm text-ink-600">
-        <p className="font-semibold text-ink-800">Out of stock</p>
+        <p className="font-semibold text-ink-800">Currently unavailable</p>
         <p className="mt-1">
           We can normally source this within a week —{" "}
           <Link href="/contact" className="font-medium text-frost-700 underline">
@@ -75,7 +75,7 @@ export function AddToCart({ sku, onHand }: { sku: string; onHand: number }) {
           disabled={remaining <= 0}
           className="h-12 flex-1 rounded-lg bg-frost-700 px-6 text-sm font-semibold text-white transition hover:bg-frost-800 disabled:bg-ink-300"
         >
-          {remaining <= 0 ? "All stock in your cart" : "Add to cart"}
+          {remaining <= 0 ? "Order limit reached" : "Add to cart"}
         </button>
       </div>
 
