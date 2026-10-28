@@ -130,7 +130,8 @@ Deliberately, and surfaced honestly in the UI rather than faked:
    calculated — fold it in with the payment integration.
 5. **Domain.** The canonical host is `company.siteUrl` in `src/data/company.ts`,
    read by `layout.tsx`, `sitemap.ts`, `robots.ts` and the product schema. It
-   is `https://siriusnexus.com`; contact emails use the same domain.
+   is `https://sirius-nexus-ecommerce.vercel.app`; contact emails go to
+   `dinoromano822@gmail.com` until the `siriusnexus.com` domain is bought.
 
 ## Notes on implementation
 

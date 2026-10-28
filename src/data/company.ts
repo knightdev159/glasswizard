@@ -10,7 +10,7 @@ export const company = {
   legalName: "Sirius Nexus LLC",
   displayName: "Sirius Nexus",
   /** Canonical origin for metadata, sitemap, robots and structured data. */
-  siteUrl: "https://siriusnexus.com",
+  siteUrl: "https://sirius-nexus-ecommerce.vercel.app",
   tagline: "Refrigeration and cooling equipment, sold online and delivered across South Florida.",
   description:
     "Sirius Nexus LLC is an online-only retailer of " +
@@ -33,8 +33,8 @@ export const company = {
   },
 
   contact: {
-    email: "sales@siriusnexus.com",
-    supportEmail: "support@siriusnexus.com",
+    email: "dinoromano822@gmail.com",
+    supportEmail: "dinoromano822@gmail.com",
     phone: "+1-954-794-4648",
     phoneDisplay: "(954) 794-4648",
   },
