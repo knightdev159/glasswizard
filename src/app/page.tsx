@@ -19,18 +19,17 @@ export default function HomePage() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-frost-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-frost-700">
               <span className="h-1.5 w-1.5 rounded-full bg-frost-500" />
-              Family-run in South Miami
+              Online only · {company.address.locality}, {company.address.region}
             </p>
             <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-ink-950 sm:text-5xl">
-              We only sell refrigerators.
-              <span className="block text-frost-700">So we know them properly.</span>
+              We only sell refrigeration.
+              <span className="block text-frost-700">So we know it properly.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-600">
-              {capitalise(spellNumber(products.length))} models, every one of them in our
-              warehouse on{" "}
-              {company.address.street.split(" ").slice(1).join(" ")}. Our own crew
-              delivers, levels the doors, connects the water line and takes the old unit
-              away. No third-party freight, no drop-and-run.
+              {capitalise(spellNumber(products.length))} refrigerator models in stock,
+              ordered online and delivered across South Florida. Our own crew delivers,
+              levels the doors, connects the water line and takes the old unit away. No
+              third-party freight, no drop-and-run.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -85,7 +84,7 @@ export default function HomePage() {
           {[
             {
               title: "Delivered by our crew",
-              body: `Free on orders over $${company.freeDeliveryThreshold} across Miami-Dade and Broward. $${company.localDeliveryFee} flat below that.`,
+              body: `Free on orders over $${company.freeDeliveryThreshold} across ${company.localDeliveryArea}. $${company.localDeliveryFee} flat below that.`,
             },
             {
               title: "Installed and levelled",

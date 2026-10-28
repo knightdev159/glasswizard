@@ -4,7 +4,7 @@ import { PolicyBody, PolicyHeading, PolicyPara, PolicyList } from "@/components/
 
 export const metadata: Metadata = {
   title: "Returns",
-  description: `${company.returnWindowDays}-day return policy for refrigerators purchased from ${company.legalName} in Miami, Florida.`,
+  description: `${company.returnWindowDays}-day return policy for refrigerators purchased online from ${company.legalName}.`,
 };
 
 export default function ReturnsPolicyPage() {

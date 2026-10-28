@@ -2,7 +2,7 @@
 
 ## The rule
 
-**This store displays only images GLASSWIZARD LLC owns or is licensed to use.**
+**This store displays only images Sirius Nexus LLC owns or is licensed to use.**
 
 Manufacturer and retailer product photography — the images that come back from a
 Google image search for a model number — is copyrighted by Samsung, LG, GE,

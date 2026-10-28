@@ -10,7 +10,7 @@ export function SiteFooter() {
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="text-lg font-bold tracking-tight text-white">
-            GLASS<span className="text-frost-400">WIZARD</span>
+            SIRIUS<span className="text-frost-400">NEXUS</span>
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-400">
             {company.tagline}
@@ -69,7 +69,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link href="/about" className="hover:text-frost-300">
-                About Glasswizard
+                About {company.displayName}
               </Link>
             </li>
           </ul>
@@ -92,7 +92,7 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
-          <h3 className="mt-6 text-sm font-semibold uppercase tracking-wider text-white">Hours</h3>
+          <h3 className="mt-6 text-sm font-semibold uppercase tracking-wider text-white">Phone hours</h3>
           <ul className="numeric mt-3 space-y-1.5 text-sm text-ink-400">
             {company.hours.map((h) => (
               <li key={h.days} className="flex justify-between gap-4">
@@ -107,7 +107,7 @@ export function SiteFooter() {
       <div className="border-t border-ink-800/60">
         <div className="container-page flex flex-col gap-2 py-6 text-xs text-ink-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {company.legalName}. All rights reserved.
+            © {year} {company.legalName}. Online retail only. All rights reserved.
           </p>
           <p>
             Specifications are published by the manufacturer and subject to change.

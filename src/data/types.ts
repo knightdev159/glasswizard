@@ -1,5 +1,5 @@
 /**
- * Domain types for the GLASSWIZARD catalog.
+ * Domain types for the Sirius Nexus catalog.
  *
  * Design rule: every field here maps to something printed on a manufacturer
  * spec sheet. Optional fields are optional because the spec sheet does not
@@ -160,7 +160,7 @@ export interface Product {
   images: ProductImage[];
 
   inventory: {
-    /** Units physically in the Miami warehouse. */
+    /** Units physically in stock. */
     onHand: number;
     /** Business days to deliver in our local service area. */
     localLeadTimeDays: number;

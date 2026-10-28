@@ -4,7 +4,7 @@ import { company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Reach ${company.legalName} in ${company.address.locality}, ${company.address.region} — phone, email, showroom address and opening hours.`,
+  description: `Reach ${company.legalName} in ${company.address.locality}, ${company.address.region} — phone, email, business address and support hours.`,
 };
 
 export default function ContactPage() {
@@ -23,7 +23,7 @@ export default function ContactPage() {
         <div className="space-y-8">
           <section>
             <h2 className="text-sm font-bold uppercase tracking-wider text-ink-400">
-              Warehouse &amp; showroom
+              Business address
             </h2>
             <address className="mt-3 not-italic leading-relaxed text-ink-800">
               {company.legalName}
@@ -35,16 +35,10 @@ export default function ContactPage() {
               <br />
               {company.address.countryName}
             </address>
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                `${company.address.street}, ${company.address.locality}, ${company.address.region} ${company.address.postalCode}`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-sm font-semibold text-frost-700 hover:underline"
-            >
-              Open in Google Maps ↗
-            </a>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-500">
+              We sell exclusively online. This is our registered business and mailing
+              address — there is no showroom or walk-in pickup.
+            </p>
           </section>
 
           <section>
@@ -82,7 +76,9 @@ export default function ContactPage() {
           </section>
 
           <section>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-ink-400">Hours</h2>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-ink-400">
+              Phone &amp; email hours
+            </h2>
             <ul className="numeric mt-3 max-w-xs space-y-2 text-sm text-ink-700">
               {company.hours.map((h) => (
                 <li key={h.days} className="flex justify-between gap-6 border-b border-ink-100 pb-2">

@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://glasswizard.com"),
+  metadataBase: new URL(company.siteUrl),
   title: {
-    default: `${company.displayName} — Refrigerators delivered and installed in Miami`,
+    default: `${company.displayName} — Refrigerators and cooling equipment, sold online`,
     template: `%s | ${company.displayName}`,
   },
   description: company.description,
@@ -27,17 +27,19 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-/** schema.org LocalBusiness — this is what puts the Miami address into the
- *  knowledge panel and local pack, so it reads from the same company record
- *  the footer does. */
+/** schema.org OnlineStore — the business sells only online, so this is an
+ *  online business with a registered address and phone hours, not a
+ *  LocalBusiness with a geo pin and opening hours. It reads from the same
+ *  company record the footer does. */
 function businessJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "HomeGoodsStore",
-    name: company.legalName,
-    alternateName: company.displayName,
+    "@type": "OnlineStore",
+    name: company.displayName,
+    legalName: company.legalName,
     description: company.description,
-    url: "https://glasswizard.com",
+    url: company.siteUrl,
+    naics: company.industry.naicsCode,
     telephone: company.contact.phone,
     email: company.contact.email,
     address: {
@@ -48,33 +50,26 @@ function businessJsonLd() {
       postalCode: company.address.postalCode,
       addressCountry: company.address.country,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: company.geo.latitude,
-      longitude: company.geo.longitude,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "10:00",
-        closes: "16:00",
-      },
-    ],
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: company.geo.latitude,
-        longitude: company.geo.longitude,
-      },
-      geoRadius: "60000",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      telephone: company.contact.phone,
+      email: company.contact.email,
+      areaServed: "US",
+      hoursAvailable: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "18:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Saturday",
+          opens: "10:00",
+          closes: "16:00",
+        },
+      ],
     },
   };
 }

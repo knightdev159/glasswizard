@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { company } from "@/data/company";
 import { categories, products } from "@/data/products";
 
-const BASE = "https://glasswizard.com";
+const BASE = company.siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

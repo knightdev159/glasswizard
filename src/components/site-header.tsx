@@ -26,7 +26,7 @@ export function SiteHeader() {
             <span className="numeric font-semibold text-white">
               ${company.freeDeliveryThreshold}
             </span>{" "}
-            across Miami-Dade &amp; Broward
+            across South Florida
           </p>
           <a
             href={`tel:${company.contact.phone}`}
@@ -41,7 +41,7 @@ export function SiteHeader() {
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <Snowflake className="h-7 w-7 text-frost-600" />
           <span className="text-lg font-bold tracking-tight text-ink-950">
-            GLASS<span className="text-frost-700">WIZARD</span>
+            SIRIUS<span className="text-frost-700">NEXUS</span>
           </span>
         </Link>
 

@@ -23,8 +23,8 @@ export default function CartPage() {
       <div className="container-page py-20 text-center">
         <h1 className="text-2xl font-bold tracking-tight text-ink-950">Your cart is empty</h1>
         <p className="mt-3 text-ink-600">
-          {capitalise(spellNumber(products.length))} models in stock in South Miami, all
-          ready to deliver this week.
+          {capitalise(spellNumber(products.length))} models in stock, all ready to
+          deliver across South Florida this week.
         </p>
         <Link
           href="/refrigerators"
@@ -168,8 +168,8 @@ export default function CartPage() {
 
           <p className="mt-4 border-t border-ink-100 pt-4 text-xs leading-relaxed text-ink-500">
             Tax shown is the {(company.salesTaxRate * 100).toFixed(0)}% Florida rate applied
-            to this cart. Miami-Dade adds a discretionary surtax on the first $5,000 of each
-            item, which is calculated at checkout.
+            to this cart. Online orders are taxed at the delivery address, so your county’s
+            discretionary surtax on the first $5,000 of each item is added at checkout.
           </p>
         </aside>
       </div>

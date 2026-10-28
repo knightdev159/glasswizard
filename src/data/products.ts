@@ -1,7 +1,7 @@
 import type { Category, Product } from "./types";
 
 /**
- * The GLASSWIZARD catalog.
+ * The Sirius Nexus catalog.
  *
  * Every capacity, dimension and energy figure below was taken from the
  * manufacturer spec sheet linked in `specSheetUrl`. Where a manufacturer does
@@ -503,7 +503,7 @@ export const products: Product[] = [
     description:
       "There is a reason this format has not changed much in forty years: nothing on it " +
       "breaks. No dispenser, no ice line, no touchscreen — a compressor, a fan and two " +
-      "doors. At 30 inches wide it drops into the opening most older Miami homes and " +
+      "doors. At 30 inches wide it drops into the opening most older South Florida homes and " +
       "condos already have. The garage-ready rating matters here specifically: it is " +
       "certified to hold temperature in ambient conditions from 45 to 110 °F, which an " +
       "unconditioned South Florida garage will absolutely reach in August. EvenTemp " +

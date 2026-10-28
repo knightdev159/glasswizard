@@ -4,7 +4,7 @@ import { PolicyBody, PolicyHeading, PolicyPara, PolicyList } from "@/components/
 
 export const metadata: Metadata = {
   title: "Delivery & installation",
-  description: `How ${company.legalName} delivers, installs and hauls away refrigerators across Miami-Dade and Broward.`,
+  description: `How ${company.legalName} delivers, installs and hauls away refrigerators across ${company.localDeliveryArea}.`,
 };
 
 export default function DeliveryPolicyPage() {
@@ -17,7 +17,7 @@ export default function DeliveryPolicyPage() {
 
       <PolicyHeading>Where we deliver</PolicyHeading>
       <PolicyPara>
-        Miami-Dade and Broward counties — all ZIP codes beginning{" "}
+        {company.localDeliveryArea} counties — all ZIP codes beginning{" "}
         <span className="numeric font-medium text-ink-900">
           {company.localDeliveryZipPrefixes.join(", ")}
         </span>

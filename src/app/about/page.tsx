@@ -5,7 +5,7 @@ import { brands, products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `${company.legalName} is a refrigeration-only appliance dealer in South Miami, delivering and installing across Miami-Dade and Broward with its own crew.`,
+  description: `${company.legalName} is an online-only refrigeration and cooling equipment retailer in ${company.address.locality}, ${company.address.regionName}, delivering across ${company.localDeliveryArea}.`,
 };
 
 export default function AboutPage() {
@@ -19,16 +19,19 @@ export default function AboutPage() {
 
       <div className="mt-8 space-y-6 leading-relaxed text-ink-700">
         <p className="text-lg text-ink-800">
-          {company.legalName} is a refrigeration-only appliance dealer operating out of a
-          warehouse on {company.address.street} in {company.address.locality}. We do not
-          sell ranges, dishwashers or laundry. One category, done properly.
+          {company.legalName} is an online-only retailer based in{" "}
+          {company.address.locality}, {company.address.regionName}. We sell
+          exclusively over the internet — there is no showroom. We focus on refrigeration
+          and cooling: residential and commercial refrigerators, freezers, HVAC and cooling
+          systems, industrial appliances and the replacement parts that keep them running.
+          We do not sell ranges, dishwashers or laundry.
         </p>
 
         <p>
           That focus is a deliberate trade. A general appliance dealer carries perhaps two
-          hundred SKUs across eight categories and cannot know any of them in depth. We
-          carry {products.length} refrigerator models from {brands.length} manufacturers,
-          and there are currently {totalUnits} units on the floor. We have opened every one
+          hundred SKUs across eight categories and cannot know any of them in depth. Our
+          catalogue currently carries {products.length} refrigerator models from{" "}
+          {brands.length} manufacturers, with {totalUnits} units in stock. We have opened every one
           of them, measured them, and installed them in enough South Florida kitchens to
           know which ones cause trouble in a 1960s condo and which ones do not.
         </p>
@@ -60,7 +63,7 @@ export default function AboutPage() {
           Where we deliver
         </h2>
         <p>
-          Miami-Dade and Broward on our own trucks — every ZIP beginning{" "}
+          {company.localDeliveryArea} on our own trucks — every ZIP beginning{" "}
           <span className="numeric font-medium text-ink-900">
             {company.localDeliveryZipPrefixes.join(", ")}
           </span>
@@ -79,6 +82,9 @@ export default function AboutPage() {
 
       <div className="mt-10 rounded-card border border-ink-200 bg-ink-50/50 p-6">
         <h2 className="font-bold text-ink-950">{company.legalName}</h2>
+        <p className="mt-1 text-xs text-ink-500">
+          Online retail only · {company.industry.naicsTitle} (NAICS {company.industry.naicsCode})
+        </p>
         <address className="mt-2 text-sm not-italic leading-relaxed text-ink-700">
           {company.address.street}
           <br />

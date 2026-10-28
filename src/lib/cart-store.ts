@@ -9,7 +9,7 @@
  * catalogue, so a stale entry can never sell a unit at last month's price.
  */
 
-const STORAGE_KEY = "glasswizard.cart.v1";
+const STORAGE_KEY = "siriusnexus.cart.v1";
 
 export interface StoredLine {
   sku: string;

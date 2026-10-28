@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
+import { company } from "@/data/company";
 import { brands, categories, products } from "@/data/products";
 import type { CategoryId, Product } from "@/data/types";
 
 export const metadata: Metadata = {
   title: "All refrigerators",
   description:
-    "Every refrigerator Glasswizard stocks in Miami — French door, side-by-side, " +
+    `Every refrigerator ${company.displayName} sells online — French door, side-by-side, ` +
     "top freezer and beverage centres from Samsung, LG, GE Profile, Bosch, KitchenAid, " +
     "Whirlpool and Frigidaire, with full published specifications.",
 };

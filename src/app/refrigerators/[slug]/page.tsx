@@ -31,7 +31,7 @@ export async function generateMetadata({
 
   return {
     title: `${product.brand} ${product.model} — ${product.name}`,
-    description: `${product.shortDescription} ${formatCuFt(product.capacity.totalCuFt)}, ${formatDimensions(product.dimensions)}. In stock in Miami at ${formatPrice(product.price)}.`,
+    description: `${product.shortDescription} ${formatCuFt(product.capacity.totalCuFt)}, ${formatDimensions(product.dimensions)}. In stock at ${formatPrice(product.price)}, delivered across South Florida.`,
     alternates: { canonical: `/refrigerators/${product.slug}` },
     openGraph: {
       title: `${product.brand} ${product.model}`,
@@ -52,10 +52,10 @@ function productJsonLd(product: Product) {
     ...(product.upc ? { gtin12: product.upc } : {}),
     brand: { "@type": "Brand", name: product.brand },
     description: product.shortDescription,
-    image: product.images.map((i) => `https://glasswizard.com${i.src}`),
+    image: product.images.map((i) => `${company.siteUrl}${i.src}`),
     offers: {
       "@type": "Offer",
-      url: `https://glasswizard.com/refrigerators/${product.slug}`,
+      url: `${company.siteUrl}/refrigerators/${product.slug}`,
       priceCurrency: "USD",
       price: product.price,
       itemCondition: "https://schema.org/NewCondition",
@@ -184,7 +184,7 @@ export default async function ProductPage({
             <li className="flex gap-2.5">
               <Tick />
               {product.price >= company.freeDeliveryThreshold
-                ? "Free delivery across Miami-Dade and Broward"
+                ? `Free delivery across ${company.localDeliveryArea}`
                 : `$${company.localDeliveryFee} flat local delivery`}
             </li>
             <li className="flex gap-2.5">

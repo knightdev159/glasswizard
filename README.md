@@ -1,6 +1,19 @@
-# GLASSWIZARD LLC — storefront
+# Sirius Nexus LLC — storefront
 
-E-commerce storefront for a refrigeration-only appliance dealer in South Miami.
+E-commerce storefront for **Sirius Nexus LLC**, an online-only retailer of
+refrigeration and cooling equipment.
+
+| | |
+| --- | --- |
+| Legal name | Sirius Nexus LLC |
+| Business address | 401 NE Mizner Blvd, Apt 514, Boca Raton, FL 33432 |
+| Phone | (954) 794-4648 |
+| Sector / industry | Retail Trade — Electronics and Appliance Retailers (NAICS 449210) |
+| Activity | Selling goods exclusively over the internet |
+| Purpose | Online sales of commercial refrigeration, refrigerators, freezers, HVAC and cooling equipment, industrial appliances, replacement parts and related equipment |
+
+The address is a registered/mailing address, not a showroom — the site says so
+on the contact page and does not publish map links or opening hours for it.
 
 **Stack:** Next.js 16.3 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS v4
 
@@ -75,7 +88,7 @@ Two blocks, and they are the two you must own:
 
 ## Images
 
-**The store displays only imagery GLASSWIZARD owns or is licensed to use.**
+**The store displays only imagery Sirius Nexus LLC owns or is licensed to use.**
 Manufacturer and retailer product photography is copyrighted by Samsung, LG, GE,
 Bosch, Whirlpool, Best Buy and Home Depot; using it on a store that sells those
 brands is a genuine liability, and manufacturers enforce it against dealers.
@@ -111,11 +124,13 @@ Deliberately, and surfaced honestly in the UI rather than faked:
 3. **Inventory.** `inventory.onHand` is static in the source file. It drives the
    stock badges, the quantity ceiling in the cart, and `availability` in the
    product schema, so it needs to come from real stock before launch.
-4. **Miami-Dade surtax.** The cart applies Florida's 7% rate. The county's
-   discretionary surtax on the first $5,000 of each item is noted on the page
-   but not calculated — fold it in with the payment integration.
-5. **Domain.** `glasswizard.com` is hardcoded as the canonical host in
-   `layout.tsx`, `sitemap.ts` and `robots.ts`.
+4. **County surtax.** The cart applies Florida's 7% rate. Online orders are
+   taxed at the delivery address, so the destination county's discretionary
+   surtax on the first $5,000 of each item is noted on the page but not
+   calculated — fold it in with the payment integration.
+5. **Domain.** The canonical host is `company.siteUrl` in `src/data/company.ts`,
+   read by `layout.tsx`, `sitemap.ts`, `robots.ts` and the product schema. It
+   is `https://siriusnexus.com`; contact emails use the same domain.
 
 ## Notes on implementation
 
@@ -131,5 +146,5 @@ Deliberately, and surfaced honestly in the UI rather than faked:
 - Dimensions render as spec-sheet fractions (`35¾"`, not `35.75"`), because that
   is what is printed on the installation guide the customer is holding when they
   measure their opening.
-- schema.org `HomeGoodsStore` on every page and `Product`/`Offer` on each
+- schema.org `OnlineStore` on every page and `Product`/`Offer` on each
   product page, both fed from the same records as the visible page.

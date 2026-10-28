@@ -68,7 +68,7 @@ export function ContactForm() {
           name="zip"
           inputMode="numeric"
           pattern="[0-9]{5}"
-          placeholder="33157"
+          placeholder="33432"
           autoComplete="postal-code"
         />
 
